@@ -235,4 +235,9 @@ typedef NS_ENUM(int, MQTTSessionManagerState) {
  */
 - (void)disconnect;
 
+/**
+ *  Drop connection anyway.
+ */
+- (void)dropConnect;
+
 @end

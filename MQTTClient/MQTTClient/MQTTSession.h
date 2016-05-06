@@ -751,4 +751,8 @@ typedef void (^MQTTPublishHandler)(NSError *error);
   */
 - (void)close;
 
+/**
+ *  drop connection anyway.
+ */
+- (void)closeInternal;
 @end

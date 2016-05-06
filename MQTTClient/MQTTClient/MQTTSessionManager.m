@@ -319,6 +319,17 @@
     }
 }
 
+- (void)dropConnect
+{
+  self.state = MQTTSessionManagerStateClosing;
+  [self.session closeInternal];
+
+  if (self.reconnectTimer) {
+    [self.reconnectTimer invalidate];
+    self.reconnectTimer = nil;
+  }
+}
+
 #pragma mark - MQTT Callback methods
 
 - (void)handleEvent:(MQTTSession *)session event:(MQTTSessionEvent)eventCode error:(NSError *)error
